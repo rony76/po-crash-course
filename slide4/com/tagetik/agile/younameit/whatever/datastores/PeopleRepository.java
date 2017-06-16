@@ -1,9 +1,10 @@
-import java.util.Arrays;
+package com.tagetik.agile.younameit.whatever.datastores;
+
 import java.util.Optional;
 
 import static java.util.Arrays.stream;
 
-class PeopleRepository {
+public class PeopleRepository {
     private static final Person[] THE_PEOPLE = {
             new Person("Fabio", Gender.MALE),
             new Person("Marco", Gender.MALE),
@@ -18,7 +19,7 @@ class PeopleRepository {
         MALE, FEMALE
     }
 
-    static class Person {
+    public static class Person {
         private final String name;
         private final Gender gender;
 
@@ -31,12 +32,12 @@ class PeopleRepository {
             return name;
         }
 
-        Gender getGender() {
+        public Gender getGender() {
             return gender;
         }
     }
 
-    Optional<Person> findPersonByName(String name) {
+    public Optional<Person> findPersonByName(String name) {
         return stream(THE_PEOPLE).filter(p -> p.getName().equals(name)).findAny();
     }
 }

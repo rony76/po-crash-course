@@ -1,3 +1,8 @@
+package com.tagetik.agile.younameit.whatever.main;
+
+import com.tagetik.agile.younameit.whatever.datastores.PeopleRepository;
+import com.tagetik.agile.younameit.whatever.datastores.PeopleRepository.Person;
+
 import java.util.Optional;
 
 public class Greeter {
@@ -17,7 +22,7 @@ public class Greeter {
         PeopleRepository peopleRepository = new PeopleRepository();
 
         // lookup the person by name (who might not exist!)
-        Optional<PeopleRepository.Person> personOptional = peopleRepository.findPersonByName(name);
+        Optional<Person> personOptional = peopleRepository.findPersonByName(name);
 
         return personOptional.map(p -> {
             // if you actually managed to find that person, address them with proper title
